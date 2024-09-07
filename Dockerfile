@@ -25,9 +25,9 @@ RUN chmod +x    /usr/local/bin/start.sh
 ###############################################################################################################################################################################################################################
 # Mon Service #
 ###############
-COPY ./services/start.sh /etc/systemd/system/start.service
-RUN chmod +x             /etc/systemd/system/start.service
-RUN systemctl enable     /etc/systemd/system/start.service
+COPY ./services/start.service  /etc/systemd/system/start.service
+RUN chmod +x                   /etc/systemd/system/start.service
+RUN systemctl enable           /etc/systemd/system/start.service
 
 ###############################################################################################################################################################################################################################
 # Expose #
