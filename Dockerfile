@@ -52,7 +52,7 @@ COPY ./services/novnc.service     /etc/systemd/system/novnc.service
 ###############################################################################################################################################################################################################################
 # Activation des services #
 ###########################
-RUN systemctl enable --now novnc;
+RUN systemctl enable novnc;
 #systemctl enable --now tigervncserver;
 
 
