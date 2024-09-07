@@ -3,7 +3,8 @@
 [![Build and Push Docker Image](https://github.com/MarcJaffre/Docker-SystemD/actions/workflows/docker-image.yml/badge.svg?branch=main)](https://github.com/MarcJaffre/Docker-SystemD/actions/workflows/docker-image.yml)
 
 
-# Creation Image
+# Guide de lancement
+Il suffit de coller le code suivant dans la console et sa génère et lance le conteneur.
 ```bash
 clear;
 ####################################################################
