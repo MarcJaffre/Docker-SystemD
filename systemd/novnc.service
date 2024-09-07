@@ -1,6 +1,6 @@
 echo "[Unit]
 Description=NoVNC Service
-After=systemd-networkd.service
+#After=systemd-networkd.service
 
 [Service]
 User=novnc
