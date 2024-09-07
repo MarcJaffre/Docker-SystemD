@@ -28,13 +28,11 @@ echo " systemctl daemon-reexec" >> /etc/systemd/system.conf.d/override.conf
 ##################
 RUN apt install -y bash bash-completion nano net-tools openssh-server
 
-
 ###############################################################################################################################################################################################################################
 # NOVNC #
 #########
 RUN apt install -y novnc;
 COPY ./services/novnc.service /etc/systemd/system/novnc.service
-RUN systemctl enable novnc.service
 
 ###############################################################################################################################################################################################################################
 # Script #
