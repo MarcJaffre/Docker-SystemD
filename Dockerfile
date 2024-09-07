@@ -22,14 +22,29 @@ mkdir -p /etc/systemd/system.conf.d && \
 echo "[Install] \n systemctl daemon-reexec"  > /etc/systemd/system.conf.d/override.conf 
 
 ###############################################################################################################################################################################################################################
-# Copie de fichiers #
-#####################
-COPY ./Paquet.sh                  /usr/local/bin/paquet.sh  
+# Paquets #
+###########
+RUN apt install -y \
+bash \
+bash-completion \
+nano \
+net-tools \
+novnc \
+openssh-server \
+python3-websockify \
+tigervnc-standalone-server
+
+
+RUN sed -i -e "s/^#PermitRootLogin prohibit-password/PermitRootLogin yes/g" /etc/ssh/sshd_config 2>/dev/null;
+RUN (echo "admin123"; echo "admin123"; echo "n") | vncpasswd
+
 
 ###############################################################################################################################################################################################################################
-# Permissions #
-###############
-RUN chmod +x /usr/local/bin/paquet.sh && bash /usr/local/bin/paquet.sh
+# OpenSSL #
+###########
+RUN mkdir -p "/usr/share/novnc/";
+RUN (echo "FR"; echo "France"; echo "Paris"; echo "Personnel"; echo "Personnel"; echo "$(hostname)"; echo "mail@exemple.co"; ) | openssl req -x509 -nodes -newkey rsa:3072 -keyout /usr/share/novnc/novnc.pem -out /usr/share/novnc/novnc.pem -days 3650
+
 
 
 
