@@ -26,7 +26,7 @@ RUN apt install -y openssh-server
 # Copie de fichier #
 ####################
 COPY ./services/start.service /etc/systemd/system/start_container.service
-COPY ./start.sh /usr/local/bin/start.sh
+COPY ./scripts/start.sh /usr/local/bin/start.sh
 
 ###############################################################################################################################################################################################################################
 # Services #
