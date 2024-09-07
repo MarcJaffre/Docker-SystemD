@@ -6,7 +6,7 @@ services:    #
 ###############################
   Debian-SystemD:             #
    # ------------------------ #
-   #privileged: true          #
+   privileged: true           #
    # ------------------------ #
    image: 'systemd'           #
    container_name: 'SystemD'  #
@@ -15,5 +15,8 @@ services:    #
    restart: 'unless-stopped'  #
    # ------------------------ #
    hostname: 'SystemD'        #
+   # ------------------------ #
+   ports:                     #
+    - '222:22'                #
    # ------------------------ #
 ###############################
