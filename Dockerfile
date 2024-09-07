@@ -26,7 +26,7 @@ RUN echo "[Install] \n systemctl daemon-reexec"  > /etc/systemd/system.conf.d/ov
 COPY ./Paquet.sh                  /usr/local/bin/paquet.sh  
 COPY ./start.sh                   /usr/local/bin/start.sh
 
-#COPY ./services/novnc.service     /etc/systemd/system/novnc.service
+COPY ./services/novnc.service     /etc/systemd/system/novnc.service
 #COPY ./services/ssh.service       /etc/systemd/system/ssh.service
 #COPY ./services/start.service     /etc/systemd/system/start_container.service
 #COPY ./services/tigervnc.service  /etc/systemd/system/tigervncserver.service
@@ -46,7 +46,7 @@ RUN bash /usr/local/bin/paquet.sh
 ###############################################################################################################################################################################################################################
 # Gestion des services #
 ########################
-#RUN systemctl enable novnc
+RUN systemctl enable novnc
 RUN systemctl enable ssh
 #RUN systemctl enable start_container
 #RUN systemctl enable tigervncserver
