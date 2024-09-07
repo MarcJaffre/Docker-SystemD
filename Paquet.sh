@@ -7,9 +7,12 @@ apt install -y bash;
 apt install -y bash-completion;
 apt install -y nano;
 apt install -y net-tools;
-apt install -y openssh-server;
-###############################################################################################################################################################################################################################
-# NO VNC #
-##########
 apt install -y novnc;
+apt install -y openssh-server;
+
+###############################################################################################################################################################################################################################
+# Configuration #
+#################
+sed -i -e "s/^#PermitRootLogin prohibit-password/PermitRootLogin yes/g" /etc/ssh/sshd_config 2>/dev/null;
+
 
