@@ -30,7 +30,7 @@ RUN apt -y install -y novnc python3-websockify
 # Certificat #
 ##############
 RUN (echo "FR"; echo "France"; echo "Paris"; echo "PERSO"; echo "Public"; echo "$(hotname)"; echo "") | openssl req -x509 -nodes -newkey rsa:3072 -keyout /usr/share/novnc/novnc.pem -out /usr/share/novnc/novnc.pem -days 3650
-RUN chown wwww-data:wwww-data /usr/share/novnc/novnc.pem
+#RUN chown wwww-data:wwww-data /usr/share/novnc/novnc.pem
 
 ###############################################################################################################################################################################################################################
 # Services #
