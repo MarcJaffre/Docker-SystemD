@@ -42,7 +42,7 @@ RUN systemctl enable novnc
 RUN apt install -y python3-websockify tigervnc-standalone-server
 RUN (echo "admin123"; echo "admin123"; echo "n") | vncpasswd
 COPY ./services/tigervnc.service /etc/systemd/system/tigervnc.service
-systemctl enable tigervnc;
+RUN systemctl enable tigervnc;
 
 
 ###############################################################################################################################################################################################################################
