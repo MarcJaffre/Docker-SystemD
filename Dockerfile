@@ -19,7 +19,7 @@ RUN echo "[Install] \n systemctl daemon-reexec"  > /etc/systemd/system.conf.d/ov
 # Environment User #
 ####################
 #RUN apt install -y xfce4
-#RUN apt install -yxfce4-goodies
+#RUN apt install -y xfce4-goodies
 
 ###############################################################################################################################################################################################################################
 # SSH #
