@@ -7,9 +7,11 @@ RUN echo root:admin | chpasswd
 RUN apt update
 RUN apt upgrade -y
 
-# Install SystemD
-RUN apt install -y systemd
-RUN apt install -y systemd-sysv
+# TEMP
+COPY ./requierement.txt /tmp/requierement.txt
+
+# Install Package
+for PACKAGE in $(cat /tmp/requierement.txt); do apt install -y $PACKAGE done
 
 # Create the directory for systemd configuration overrides
 RUN mkdir -p /etc/systemd/system.conf.d/
@@ -19,7 +21,6 @@ RUN echo "[Install]" > /etc/systemd/system.conf.d/override.conf
 RUN echo " systemctl daemon-reexec" >> /etc/systemd/system.conf.d/override.conf
 
 # SSH
-RUN apt install -y openssh-server
 RUN sed -i -e "s/^#PermitRootLogin prohibit-password/PermitRootLogin yes/g" /etc/ssh/sshd_config;
 
 # Workdir
