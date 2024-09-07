@@ -4,9 +4,9 @@
 # Outil #
 #########
 apt install -y bash;
-apt install -y bash-completion;
-apt install -y nano;
-apt install -y net-tools;
+#apt install -y bash-completion;
+#apt install -y nano;
+#apt install -y net-tools;
 
 ###############################################################################################################################################################################################################################
 # SSH #
