@@ -28,9 +28,6 @@ COPY ./services/start.service  /etc/systemd/system/start.service
 RUN chmod +x                   /etc/systemd/system/start.service
 RUN systemctl enable           /etc/systemd/system/start.service
 
-
-
-
 ###############################################################################################################################################################################################################################
 # SSH #
 #######
