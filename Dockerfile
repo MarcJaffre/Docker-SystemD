@@ -15,38 +15,19 @@ RUN apt install -y systemd systemd-sysv
 RUN mkdir -p /etc/systemd/system.conf.d
 RUN echo "[Install] \n systemctl daemon-reexec"  > /etc/systemd/system.conf.d/override.conf 
 
-###############################################################################################################################################################################################################################
-# SSH #
-#######
-RUN apt install -y openssh-server
-RUN systemctl enable ssh
-
-###############################################################################################################################################################################################################################
-# NOVNC #
-#########
-#RUN apt install -y novnc
-#COPY ./services/novnc.service /etc/systemd/system/novnc.service
-#RUN systemctl enable novnc
-
-###############################################################################################################################################################################################################################
-# Tigervnc #
-############
-#RUN apt install -y python3-websockify tigervnc-standalone-server
-#RUN (echo "admin123"; echo "admin123"; echo "n") | vncpasswd
-#COPY ./services/tigervnc.service /etc/systemd/system/tigervnc.service
-#RUN systemctl enable tigervnc
 
 ###############################################################################################################################################################################################################################
 # Start-up #
 ############
 COPY ./start.sh /usr/local/bin/start.sh
-RUN chmod +x /usr/local/bin/start.sh
-
+RUN chmod +x    /etc/systemd/system/start.service
 
 ###############################################################################################################################################################################################################################
-# Environment User #
-####################
-#RUN apt install -y xfce4 xfce4-goodies
+# Mon Service #
+###############
+COPY ./service/start.sh /usr/local/bin/start.sh
+RUN chmod +x    /usr/local/bin/start.sh
+RUN systemctl enable /etc/systemd/system/start.service
 
 ###############################################################################################################################################################################################################################
 # Expose #
@@ -66,3 +47,29 @@ WORKDIR /root
 # Set the default command to run systemd #
 ##########################################
 CMD ["systemd"]
+
+###############################################################################################################################################################################################################################
+# SSH #
+#######
+#RUN apt install -y openssh-server
+#RUN systemctl enable ssh
+
+###############################################################################################################################################################################################################################
+# NOVNC #
+#########
+#RUN apt install -y novnc
+#COPY ./services/novnc.service /etc/systemd/system/novnc.service
+#RUN systemctl enable novnc
+
+###############################################################################################################################################################################################################################
+# Tigervnc #
+############
+#RUN apt install -y python3-websockify tigervnc-standalone-server
+#RUN (echo "admin123"; echo "admin123"; echo "n") | vncpasswd
+#COPY ./services/tigervnc.service /etc/systemd/system/tigervnc.service
+#RUN systemctl enable tigervnc
+
+###############################################################################################################################################################################################################################
+# Environment User #
+####################
+#RUN apt install -y xfce4 xfce4-goodies
