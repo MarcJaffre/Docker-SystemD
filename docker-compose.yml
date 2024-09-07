@@ -3,12 +3,16 @@ version: '3' #
 services:    #
 ##############
 #
-################################
-  Debian-SystemD:              #
-    image: 'systemd'           #
-    container_name: 'SystemD'  #
-    network_mode: 'bridge'     #
-    hostname: 'SystemD'        #
-    privileged: true           #
-    command: /usr/sbin/init    #
-################################
+###############################
+  Debian-SystemD:             #
+   # ------------------------ #
+   image: 'systemd'           #
+   container_name: 'SystemD'  #
+   network_mode: 'bridge'     #
+   restart: 'unless-stopped'  #
+   # ------------------------ #
+   privileged: true           #
+   # ------------------------ #
+   hostname: 'SystemD'        #
+   # ------------------------ #
+###############################
