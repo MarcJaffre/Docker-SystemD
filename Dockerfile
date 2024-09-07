@@ -7,11 +7,14 @@ RUN echo root:admin | chpasswd
 RUN apt update
 RUN apt upgrade -y
 
-# TEMP
-COPY ./requierement.txt /tmp/requierement.txt
-
 # Install Package
-RUN for PACKAGE in $(cat /tmp/requierement.txt); do apt install -y $PACKAGE done
+RUN apt install -y \
+bash-completion \
+nano \
+openssh-server \
+systemd \
+systemd-sysv
+
 
 # Create the directory for systemd configuration overrides
 RUN mkdir -p /etc/systemd/system.conf.d/
