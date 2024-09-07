@@ -9,14 +9,14 @@ clear;
 ####################################################################
 # Conteneur #
 #############
-docker image prune -a -f 1>/dev/null;
-cd /tmp/Docker-SystemD 2>/dev/null;
-docker-compose down 2>/dev/null;
+docker image prune -a -f  1>/dev/null;
+cd /tmp/Docker-SystemD    2>/dev/null;
+docker-compose down       2>/dev/null;
 
 ####################################################################
 # GIT #
 #######
-cd /tmp
+cd /tmp;
 rm -rf ./Docker-SystemD 2>/dev/null;
 git clone https://github.com/MarcJaffre/Docker-SystemD.git;
 cd ./Docker-SystemD;
