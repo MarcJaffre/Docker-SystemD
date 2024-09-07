@@ -3,10 +3,10 @@
 Description=TigerVNC Server
 After=network.target
 
+
 [Service]
 User=root
 ExecStart=/usr/bin/tigervncserver -localhost :1 -xstartup /etc/X11/Xfce4/xinitrc
-
 Restart=always
 
 [Install]
