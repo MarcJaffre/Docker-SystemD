@@ -11,4 +11,4 @@ RUN echo "[Install]" > /etc/systemd/system.conf.d/override.conf
 RUN echo " systemctl daemon-reexec" >> /etc/systemd/system.conf.d/override.conf
 
 # Set the default command to run systemd
-CMD ["systemd"]
+CMD ["exec", "/sbin/init"]
