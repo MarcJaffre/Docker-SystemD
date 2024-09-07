@@ -10,17 +10,7 @@ RUN apt-get update && \
 RUN systemctl enable systemd
 
 # Create a systemd service file for NoVNC
-RUN echo "[Unit]
-Description=NoVNC Service
-After=systemd-networkd.service
-
-[Service]
-User=novnc
-ExecStart=/usr/bin/novnc --listen 6080
-Restart=always
-
-[Install]
-WantedBy=multi-user.target" > /etc/systemd/system/novnc.service
+RUN COPY ./systemd/novnc.service /etc/systemd/system/novnc.service
 
 # Reload systemd daemon
 RUN systemctl daemon-reload
