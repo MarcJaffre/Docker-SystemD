@@ -1,13 +1,8 @@
 #!/usr/bin/bash
 
 ##########################################################################################################################################################
-# Configuration de NOVNC #
-##########################
-systemctl enable novnc;
-systemctl start novnc;
+systemctl enable  --now novnc 2>/dev/null;
+systemctl disable --now ssh   2>/dev/null;
 
-##########################################################################################################################################################
-# Configuration du SSH #
-########################
-systemctl disable --now ssh;
-sed -i -e "s/^#PermitRootLogin prohibit-password/PermitRootLogin yes/g" /etc/ssh/sshd_config;
+
+
