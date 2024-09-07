@@ -17,6 +17,6 @@ apt install -y novnc;
 ###############################################################################################################################################################################################################################
 # Copie de fichiers #
 #####################
-COPY ./services/novnc.service /etc/systemd/system/novnc.service;
+COPY ./services/novnc.service /etc/systemd/system/novnc.service 2>/dev/null;
 
 
