@@ -2,8 +2,8 @@ FROM debian:12
 
 # Install systemd
 RUN apt update
-#RUN apt install -y dbus
-#RUN apt install -y dbus-user-session
+
+# Install SystemD
 RUN apt install -y systemd
 RUN apt install -y systemd-sysv
 
@@ -15,7 +15,13 @@ RUN echo "[Install]" > /etc/systemd/system.conf.d/override.conf
 RUN echo " systemctl daemon-reexec" >> /etc/systemd/system.conf.d/override.conf
 
 # Set the default command to run systemd
-#CMD ["systemd"]
 CMD ["exec", "/sbin/init"]
 
+
+
+
+
+#CMD ["systemd"]
+#RUN apt install -y dbus
+#RUN apt install -y dbus-user-session
 # docker run -d -it --privileged my-debian-systemd-image
