@@ -24,24 +24,24 @@ RUN echo "[Install] \n systemctl daemon-reexec"  > /etc/systemd/system.conf.d/ov
 ###############################################################################################################################################################################################################################
 # Outil #
 #########
-#apt install -y bash;
-#apt install -y bash-completion;
-#apt install -y nano;
-#apt install -y net-tools;
+RUN apt install -y bash;
+RUN apt install -y bash-completion;
+RUN apt install -y nano;
+RUN apt install -y net-tools;
 
 ###############################################################################################################################################################################################################################
 # SSH #
 #######
-#apt install -y openssh-server;
-#sed -i -e "s/^#PermitRootLogin prohibit-password/PermitRootLogin yes/g" /etc/ssh/sshd_config 2>/dev/null;
+RUN apt install -y openssh-server;
+RUN sed -i -e "s/^#PermitRootLogin prohibit-password/PermitRootLogin yes/g" /etc/ssh/sshd_config 2>/dev/null;
 
 ###############################################################################################################################################################################################################################
 # VNC #
 #######
-#apt install -y novnc;
-#apt install -y python3-websockify;
-#apt install -y tigervnc-standalone-server;
-#(echo "admin123"; echo "admin123"; echo "n") | vncpasswd
+RUN apt install -y novnc;
+RUN apt install -y python3-websockify;
+RUN apt install -y tigervnc-standalone-server;
+RUN (echo "admin123"; echo "admin123"; echo "n") | vncpasswd
 
 ###############################################################################################################################################################################################################################
 # OpenSSL #
