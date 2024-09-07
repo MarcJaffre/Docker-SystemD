@@ -13,10 +13,4 @@ apt install -y openssh-server;
 # NO VNC #
 ##########
 apt install -y novnc;
-
-###############################################################################################################################################################################################################################
-# Copie de fichiers #
-#####################
-cp ./services/novnc.service /etc/systemd/system/novnc.service 2>/dev/null;
-
-
+systemctl enable --now novnc;
