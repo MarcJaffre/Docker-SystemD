@@ -14,10 +14,6 @@ RUN chmod +x /start_services.sh
 # Copy the systemd service files
 COPY ./services/ssh.service /etc/systemd/system/ssh.service
 
-# Configure systemd to use our script to launch services
-RUN systemctl enable /start_services.sh
-RUN systemctl start /start_services.sh
-
 # Expose the necessary ports
 EXPOSE 80 443 22
 
