@@ -10,7 +10,7 @@ services:    #
    # ------------------------ #
    image: 'systemd'           #
    container_name: 'SystemD'  #
-   network_mode: 'host'       #
+   network_mode: 'bridge'     #
    # ------------------------ #
    restart: 'unless-stopped'  #
    # ------------------------ #
