@@ -17,31 +17,34 @@ mkdir -p /etc/systemd/system.conf.d && \
 echo "[Install] \n systemctl daemon-reexec"  > /etc/systemd/system.conf.d/override.conf 
 
 ###############################################################################################################################################################################################################################
-# Paquets #
-###########
+# SSH #
+#######
 RUN apt install -y openssh-server
-RUN apt install -y novnc
-#RUN apt install -y python3-websockify
-#RUN apt install -y tigervnc-standalone-server
+RUN systemctl enable ssh
 
 ###############################################################################################################################################################################################################################
 # NOVNC #
 #########
+RUN apt install -y novnc
+RUN systemctl enable novnc
+
+###############################################################################################################################################################################################################################
+# TigerVNC #
+############
+RUN apt install -y python3-websockify
+RUN apt install -y tigervnc-standalone-server
+
+###############################################################################################################################################################################################################################
 #RUN (echo "admin123"; echo "admin123"; echo "n") | vncpasswd
 #RUN mkdir -p "/usr/share/novnc/";
 #COPY ./services/novnc.service /etc/systemd/system/novnc.service
-
-###############################################################################################################################################################################################################################
-# OpenSSL #
-###########
 #RUN (echo "FR"; echo "France"; echo "Paris"; echo "Personnel"; echo "Personnel"; echo "$(hostname)"; echo "mail@exemple.co"; ) | openssl req -x509 -nodes -newkey rsa:3072 -keyout /usr/share/novnc/novnc.pem -out /usr/share/novnc/novnc.pem -days 3650
 
 ###############################################################################################################################################################################################################################
 # Services #
 ############
 
-RUN systemctl enable ssh
-RUN systemctl enable novnc
+
 
 
 
