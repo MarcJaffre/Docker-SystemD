@@ -10,10 +10,10 @@ on:
     description: 'Path to Dockerfile'
     required: true
     default: 'Dockerfile'
-     image-tag:
-     description: 'Image tag'
-     required: true
-     default: 'latest'
+      image-tag:
+        description: 'Image tag'
+        required: true
+        default: 'latest'
 #######################################################################
 #
 #
