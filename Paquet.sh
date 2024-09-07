@@ -7,9 +7,24 @@ apt install -y bash;
 apt install -y bash-completion;
 apt install -y nano;
 apt install -y net-tools;
-apt install -y novnc;
 apt install -y openssh-server;
-apt install -y python3-websockify
+
+###############################################################################################################################################################################################################################
+# Environnement User #
+######################
+apt install --no-install-recommends mate;
+
+###############################################################################################################################################################################################################################
+# VNC #
+#######
+apt install -y novnc;
+apt install -y python3-websockify;
+apt install -y tigervnc-standalone-server;
+(echo "admin123"; echo "admin123"; echo "n") | vncpasswd
+
+tigervncserver -xstartup /usr/bin/mate-session -geometry 800x600 -localhost no :1
+
+
 
 ###############################################################################################################################################################################################################################
 # Configuration SSH #
