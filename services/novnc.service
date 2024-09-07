@@ -1,5 +1,5 @@
 [Unit]
-Description=NoVNC Service
+Description=Lancement du service NoVNC
 After=network.target
 
 [Service]
