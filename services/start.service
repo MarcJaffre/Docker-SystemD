@@ -1,2 +1,11 @@
+[Unit]
+Description=Start services
+After=systemd-networkd.service
 
-/usr/local/bin/start_services.sh
+[Service]
+ExecStart=/usr/local/bin/start_services.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
