@@ -3,7 +3,7 @@ Description=NoVNC Service
 After=network.target
 
 [Service]
-ExecStart=websockify -D --web=/usr/share/novnc/ --cert=novnc.pem 6080 localhost:5901 
+ExecStart=websockify -D --web=/usr/share/novnc/ --cert=/usr/share/novnc/novnc.pem 6080 localhost:5901 
 Restart=always
 
 [Install]
