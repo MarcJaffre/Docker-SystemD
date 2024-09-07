@@ -39,7 +39,8 @@ RUN chmod +x /usr/local/bin/start.sh
 ############
 RUN systemctl enable novnc
 RUN systemctl enable ssh
-RUN systemctl enable start_container
+
+#RUN systemctl enable start_container
 
 ###############################################################################################################################################################################################################################
 # Expose #
