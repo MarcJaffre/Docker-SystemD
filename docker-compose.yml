@@ -10,15 +10,10 @@ services:    #
    # ------------------------ #
    image: 'systemd'           #
    container_name: 'SystemD'  #
-   network_mode: 'bridge'     #
+   network_mode: 'host'       #
    # ------------------------ #
    restart: 'unless-stopped'  #
    # ------------------------ #
    hostname: 'SystemD'        #
-   # ------------------------ #
-   ports:                     #
-    - '222:22'                #
-    - '6080:6080'             #
-    - '5901:5901'             #
    # ------------------------ #
 ###############################
