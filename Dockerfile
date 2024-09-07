@@ -11,7 +11,7 @@ RUN apt upgrade -y
 COPY ./requierement.txt /tmp/requierement.txt
 
 # Install Package
-for PACKAGE in $(cat /tmp/requierement.txt); do apt install -y $PACKAGE done
+RUN for PACKAGE in $(cat /tmp/requierement.txt); do apt install -y $PACKAGE done
 
 # Create the directory for systemd configuration overrides
 RUN mkdir -p /etc/systemd/system.conf.d/
