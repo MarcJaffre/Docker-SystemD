@@ -36,7 +36,7 @@ RUN chmod +x                  /usr/local/bin/start.sh
 # Service #
 ###########
 COPY ./services/start.service /etc/systemd/system/start_container.service
-RUN systemctl enable start.service
+RUN systemctl enable start_container.service
 
 ###############################################################################################################################################################################################################################
 # Expose #
