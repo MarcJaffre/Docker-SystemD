@@ -20,6 +20,17 @@ RUN apt upgrade -y
 RUN apt install -y systemd systemd-sysv && mkdir -p /etc/systemd/system.conf.d
 RUN echo "[Install] \n systemctl daemon-reexec"  > /etc/systemd/system.conf.d/override.conf 
 
+
+
+
+
+
+
+
+
+
+
+
 ###############################################################################################################################################################################################################################
 # Expose #
 ##########
