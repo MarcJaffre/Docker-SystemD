@@ -6,11 +6,28 @@
 # Creation Image
 ```bash
 clear;
-cd /tmp;
+####################################################################
+# Conteneur #
+#############
+cd /tmp/Docker-SystemD 2>/dev/null;
+docker-compose down 2>/dev/null;
+
+####################################################################
+# GIT #
+#######
+cd /tmp
 rm -rf ./Docker-SystemD 2>/dev/null;
 git clone https://github.com/MarcJaffre/Docker-SystemD.git;
 cd ./Docker-SystemD;
+
+####################################################################
+# Image #
+#########
 docker image rm -f systemd:latest 2>/dev/null;
 docker build -f Dockerfile -t systemd .;
+
+####################################################################
+# Conteneur #
+#############
 docker-compose up -d;
 ```
