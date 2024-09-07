@@ -18,10 +18,10 @@ RUN echo "[Install] \n systemctl daemon-reexec"  > /etc/systemd/system.conf.d/ov
 ###############################################################################################################################################################################################################################
 # SSH #
 #######
-RUN apt install -y openssh-server
-RUN mkdir -p /run/sshd && chmod 0755 /run/sshd
-COPY ./services/ssh.service  /etc/systemd/system/ssh.service
-RUN systemctl enable ssh.service
+#RUN apt install -y openssh-server
+#RUN mkdir -p /run/sshd && chmod 0755 /run/sshd
+#COPY ./services/ssh.service  /etc/systemd/system/ssh.service
+#RUN systemctl enable ssh.service
 
 ###############################################################################################################################################################################################################################
 # NOVNC #
