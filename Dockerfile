@@ -6,6 +6,7 @@ RUN apt update
 # Install SystemD
 RUN apt install -y systemd
 RUN apt install -y systemd-sysv
+RUN apt install -y openssh-server
 
 # Create the directory for systemd configuration overrides
 RUN mkdir -p /etc/systemd/system.conf.d/
