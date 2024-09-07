@@ -43,8 +43,8 @@ COPY ./start.sh  /usr/local/bin/start.sh
 RUN chmod +x     /usr/local/bin/start.sh
 
 ###############################################################################################################################################################################################################################
-# AutoStart #
-#############
+# Customisation #
+#################
 COPY ./services/start.service /etc/systemd/system/start_container.service
 RUN systemctl enable  start_container.service
 
