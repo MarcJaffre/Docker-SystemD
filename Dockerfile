@@ -34,24 +34,22 @@ echo "Public"; \
 echo "$(hotname)"; \
 echo ""\
 ) | \
-openssl req -x509 -nodes -newkey rsa:3072 -keyout /root/novnc.pem -out /root/novnc.pem -days 3650
+openssl req -x509 -nodes -newkey rsa:3072 -keyout /novnc.pem -out /usr/share/novnc/novnc.pem -days 3650 &&
+chown wwww-data:wwww-data /usr/share/novnc/novnc.pem
 
 
 ##############################################################################################################
 # Services #
 ############
 RUN cat > /etc/systemd/system/novnc.service  << EOF
-https://wiki.formatc.hr/link/109#bkmrk-%5Bservice%5Duser%3Dwww-da
- 
 [Service]
 User=www-data
 ExecStart=
-ExecStart=authbind --deep novnc --listen 80
+ExecStart=websockify -D --web=/usr/share/novnc/ --cert=/usr/share/novnc/novnc.pem 6080 localhost:5901
 
 [Install]
 WantedBy=graphical.target
 EOF
-
 
 
 ##############################################################################################################
