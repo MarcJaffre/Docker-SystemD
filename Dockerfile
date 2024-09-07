@@ -26,6 +26,7 @@ RUN systemctl enable ssh
 #########
 #RUN apt install -y novnc
 #COPY ./services/novnc.service /etc/systemd/system/novnc.service
+#RUN systemctl enable novnc
 
 ###############################################################################################################################################################################################################################
 # Tigervnc #
@@ -33,15 +34,14 @@ RUN systemctl enable ssh
 #RUN apt install -y python3-websockify tigervnc-standalone-server
 #RUN (echo "admin123"; echo "admin123"; echo "n") | vncpasswd
 #COPY ./services/tigervnc.service /etc/systemd/system/tigervnc.service
+#RUN systemctl enable tigervnc
 
 ###############################################################################################################################################################################################################################
 # Start-up #
 ############
 COPY ./start.sh /usr/bin/start.sh
+RUN chmod +x /usr/bin/start.sh
 
-
-#RUN systemctl enable novnc
-#RUN systemctl enable tigervnc
 
 ###############################################################################################################################################################################################################################
 # Environment User #
