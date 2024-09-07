@@ -15,12 +15,28 @@ RUN apt upgrade -y
 # Install Package #
 ###################
 RUN apt install -y \
+bash \
 bash-completion \
 nano \
+net-tools \
+novnc \
 openssh-server \
 systemd \
 systemd-sysv \
+x11vnc \
+xterm \
+xvfb
 
+ENV HOME=/root \
+DEBIAN_FRONTEND=noninteractive \
+    LANG=fr_FR.UTF-8 \
+    LANGUAGE=fr_FR.UTF-8 \
+    LC_ALL=C.UTF-8 \
+    DISPLAY=:0.0 \
+    DISPLAY_WIDTH=1024 \
+    DISPLAY_HEIGHT=768 \
+    RUN_XTERM=yes \
+    RUN_FLUXBOX=yes
 
 ###############################################################################################################################################################################################################################
 # Create the directory for systemd configuration overrides #
