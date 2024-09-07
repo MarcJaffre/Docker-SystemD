@@ -20,8 +20,10 @@ RUN apt upgrade -y
 RUN \
 apt install -y systemd systemd-sysv && \
 mkdir -p /etc/systemd/system.conf.d && \
-#echo "[Install]" > /etc/systemd/system.conf.d/override.conf && \
-#echo " systemctl daemon-reexec" >> /etc/systemd/system.conf.d/override.conf
+
+# Autostart SystemD
+echo "[Install]" > /etc/systemd/system.conf.d/override.conf && \
+echo " systemctl daemon-reexec" >> /etc/systemd/system.conf.d/override.conf
 
 ###############################################################################################################################################################################################################################
 # Paquet de base #
