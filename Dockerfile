@@ -13,7 +13,24 @@ RUN apt update && apt upgrade -y
 ###########
 RUN apt install -y systemd systemd-sysv
 RUN mkdir -p /etc/systemd/system.conf.d
-RUN echo "[Install] \n systemctl daemon-reexec"  > /etc/systemd/system.conf.d/override.conf 
+RUN echo "[Install] \n systemctl daemon-reexec"  > /etc/systemd/system.conf.d/override.conf
+
+###############################################################################################################################################################################################################################
+# Start-up #
+############
+COPY ./start.sh /usr/local/bin/start.sh
+RUN chmod +x    /usr/local/bin/start.sh
+
+###############################################################################################################################################################################################################################
+# Mon Service #
+###############
+COPY ./services/start.service  /etc/systemd/system/start.service
+RUN chmod +x                   /etc/systemd/system/start.service
+RUN systemctl enable           /etc/systemd/system/start.service
+
+
+
+
 ###############################################################################################################################################################################################################################
 # SSH #
 #######
@@ -31,19 +48,6 @@ COPY ./services/novnc.service /etc/systemd/system/novnc.service
 RUN apt install -y python3-websockify tigervnc-standalone-server
 RUN (echo "admin123"; echo "admin123"; echo "n") | vncpasswd
 COPY ./services/tigervnc.service /etc/systemd/system/tigervnc.service
-
-###############################################################################################################################################################################################################################
-# Start-up #
-############
-COPY ./start.sh /usr/local/bin/start.sh
-RUN chmod +x    /usr/local/bin/start.sh
-
-###############################################################################################################################################################################################################################
-# Mon Service #
-###############
-COPY ./services/start.service  /etc/systemd/system/start.service
-RUN chmod +x                   /etc/systemd/system/start.service
-RUN systemctl enable           /etc/systemd/system/start.service
 
 ###############################################################################################################################################################################################################################
 # Expose #
