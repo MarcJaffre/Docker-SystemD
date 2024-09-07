@@ -18,22 +18,23 @@ RUN echo "[Install] \n systemctl daemon-reexec"  > /etc/systemd/system.conf.d/ov
 ###############################################################################################################################################################################################################################
 # Start-up #
 ############
-COPY ./start.sh /usr/local/bin/start.sh
-RUN chmod +x    /usr/local/bin/start.sh
+#COPY ./start.sh /usr/local/bin/start.sh
+#RUN chmod +x    /usr/local/bin/start.sh
 
 ###############################################################################################################################################################################################################################
 # Mon Service #
 ###############
-COPY ./services/start.service  /etc/systemd/system/start.service
-RUN chmod +x                   /etc/systemd/system/start.service
-RUN systemctl enable           /etc/systemd/system/start.service
+#COPY ./services/start.service  /etc/systemd/system/start.service
+#RUN chmod +x                   /etc/systemd/system/start.service
+#RUN systemctl enable start.service
 
 ###############################################################################################################################################################################################################################
 # SSH #
 #######
 RUN apt install -y openssh-server
-COPY ./services/ssh.service  /etc/systemd/system/ssh.service
 RUN mkdir -p /run/sshd && chmod 0755 /run/sshd
+COPY ./services/ssh.service  /etc/systemd/system/ssh.service
+RUN systemctl enable ssh.service
 
 ###############################################################################################################################################################################################################################
 # NOVNC #
