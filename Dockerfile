@@ -8,13 +8,10 @@ RUN apt-get update && apt-get install -y systemd systemd-sysv
 RUN mkdir -p /etc/systemd/system
 
 # Copy the script to launch services
-COPY start_services.sh /start_services.sh
+COPY start.sh /start_services.sh
 RUN chmod +x /start_services.sh
 
 # Copy the systemd service files
-COPY novnc.service /etc/systemd/system/novnc.service
-COPY apache2.service /etc/systemd/system/apache2.service
-COPY mysql.service /etc/systemd/system/mysql.service
 COPY ssh.service /etc/systemd/system/ssh.service
 
 # Configure systemd to use our script to launch services
