@@ -9,6 +9,7 @@ apt install -y nano;
 apt install -y net-tools;
 apt install -y novnc;
 apt install -y openssh-server;
+apt install -y python3-websockify
 
 ###############################################################################################################################################################################################################################
 # Configuration #
