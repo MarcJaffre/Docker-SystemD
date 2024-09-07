@@ -29,4 +29,4 @@ WORKDIR /app
 EXPOSE 22
 
 # Set the default command to run systemd
-CMD ["/sbin/init && /usr/bin/journalctl -f"]
+CMD ["/sbin/init"]
