@@ -21,8 +21,8 @@ echo "[Install] \n systemctl daemon-reexec"  > /etc/systemd/system.conf.d/overri
 ###########
 RUN apt install -y openssh-server
 RUN apt install -y novnc
-RUN apt install -y python3-websockify
-RUN apt install -y tigervnc-standalone-server
+#RUN apt install -y python3-websockify
+#RUN apt install -y tigervnc-standalone-server
 
 ###############################################################################################################################################################################################################################
 # NOVNC #
