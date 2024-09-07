@@ -1,7 +1,7 @@
 [Service]
 User=www-data
 ExecStart=
-ExecStart=websockify -D --web=/usr/share/novnc/ --cert=/usr/share/novnc/novnc.pem 6080 localhost:5901
+ExecStart=websockify -D --web=/usr/share/novnc/ --cert=/usr/share/novnc/novnc.pem 6080 0.0.0.0:5901
 
 [Install]
 WantedBy=graphical.target
