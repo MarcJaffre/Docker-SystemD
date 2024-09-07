@@ -46,16 +46,13 @@ RUN (echo "admin123"; echo "admin123"; echo "n") | vncpasswd
 ###############################################################################################################################################################################################################################
 # OpenSSL #
 ###########
-#mdkir -p /usr/share/novnc/;
-#(echo "FR"; echo "France"; echo "Paris"; echo "Personnel"; echo "Personnel"; echo "$(hostname)"; echo "mail@exemple.co"; ) | \
-#openssl req -x509 -nodes -newkey rsa:3072 -keyout /usr/share/novnc/novnc.pem -out /usr/share/novnc/novnc.pem -days 3650
+RUN mdkir -p /usr/share/novnc/;
+RUN (echo "FR"; echo "France"; echo "Paris"; echo "Personnel"; echo "Personnel"; echo "$(hostname)"; echo "mail@exemple.co"; ) | openssl req -x509 -nodes -newkey rsa:3072 -keyout /usr/share/novnc/novnc.pem -out /usr/share/novnc/novnc.pem -days 3650
 
 ###############################################################################################################################################################################################################################
 # Environnement User #
 ######################
-#apt install --no-install-recommends -y mate;
-
-
+RUN apt install --no-install-recommends -y mate;
 
 ###############################################################################################################################################################################################################################
 # Expose #
