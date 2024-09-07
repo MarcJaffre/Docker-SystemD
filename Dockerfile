@@ -15,7 +15,7 @@ RUN echo "[Install]" > /etc/systemd/system.conf.d/override.conf
 RUN echo " systemctl daemon-reexec" >> /etc/systemd/system.conf.d/override.conf
 
 # Workdir
-/app
+WORKDIR /app
 
 # Expose
 EXPOSE 22 80 443
