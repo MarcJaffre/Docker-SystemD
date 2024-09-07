@@ -1,7 +1,11 @@
+echo "[Unit]
+Description=NoVNC Service
+After=systemd-networkd.service
+
 [Service]
-User=www-data
-ExecStart=
-ExecStart=websockify -D --web=/usr/share/novnc/ --cert=/usr/share/novnc/novnc.pem 6080 0.0.0.0:5901
+User=novnc
+ExecStart=/usr/bin/novnc --listen 6080
+Restart=always
 
 [Install]
-WantedBy=graphical.target
+WantedBy=multi-user.target" > /etc/systemd/system/novnc.service
