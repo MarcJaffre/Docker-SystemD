@@ -1,17 +1,23 @@
-name: Build and Push Docker Image
-
+###################################
+name: Build and Push Docker Image #
+###################################
+#
+#######################################################################
 on:
-  workflow_dispatch:
-    inputs:
-      dockerfile:
-        description: 'Path to Dockerfile'
-        required: true
-        default: 'Dockerfile'
-      image-tag:
-        description: 'Image tag'
-        required: true
-        default: 'latest'
-
+ workflow_dispatch:
+  inputs:
+   dockerfile:
+    description: 'Path to Dockerfile'
+    required: true
+    default: 'Dockerfile'
+     image-tag:
+     description: 'Image tag'
+     required: true
+     default: 'latest'
+#######################################################################
+#
+#
+#######################################################################
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
