@@ -1,6 +1,7 @@
 [Unit]
 Description=Start services
-After=systemd-networkd.service
+After=network.target
+
 
 [Service]
 ExecStart=/usr/bin/bash -c '/usr/local/bin/start.sh'
