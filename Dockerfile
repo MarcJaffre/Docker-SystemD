@@ -1,7 +1,11 @@
 FROM debian:12
 
 # Install systemd
-RUN apt update && apt install -y systemd
+RUN apt update
+RUN apt install -y dbus
+RUN apt install -y dbus-user-session
+RUN apt install -y systemd
+RUN apt install -y systemd-sysv
 
 # Create the directory for systemd configuration overrides
 RUN mkdir -p /etc/systemd/system.conf.d/
