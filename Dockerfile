@@ -38,7 +38,7 @@ RUN echo " systemctl daemon-reexec" >> /etc/systemd/system.conf.d/override.conf
 # Copy #
 ########
 COPY ./services/start.service /etc/systemd/system/start.service
-COPY ./start.sh /usr/local/bin/start_services.sh
+COPY ./script/start.sh /usr/local/bin/start_services.sh
 
 ###############################################################################################################################################################################################################################
 # Permission #
