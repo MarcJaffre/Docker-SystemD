@@ -12,7 +12,7 @@ COPY start.sh /start_services.sh
 RUN chmod +x /start_services.sh
 
 # Copy the systemd service files
-COPY ssh.service /etc/systemd/system/ssh.service
+COPY ./services/ssh.service /etc/systemd/system/ssh.service
 
 # Configure systemd to use our script to launch services
 RUN systemctl enable /start_services.sh
