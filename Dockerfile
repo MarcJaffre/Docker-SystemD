@@ -28,7 +28,7 @@ RUN echo "[Install] \n systemctl daemon-reexec"  > /etc/systemd/system.conf.d/ov
 #########
 RUN apt install -y novnc
 COPY ./services/novnc.service /etc/systemd/system/novnc.service
-systemctl enable novnc
+RUN systemctl enable novnc
 
 ###############################################################################################################################################################################################################################
 # Tigervnc #
