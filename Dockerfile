@@ -40,6 +40,7 @@ chown wwww-data:wwww-data /usr/share/novnc/novnc.pem
 ##############################################################################################################
 # Services #
 ############
+COPY ./systemd/novnc.service /etc/systemd/system/novnc.service
 
 ##############################################################################################################
 # Create the directory for systemd configuration overrides
