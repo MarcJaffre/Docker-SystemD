@@ -6,8 +6,10 @@
 # Creation Image
 ```bash
 clear;
-cd ;
+cd /tmp;
+rm -rf ./Docker-SystemD 2>/dev/null;
 git clone https://github.com/MarcJaffre/Docker-SystemD.git;
-cd Docker-SystemD;
-docker image rm -f systemd 2>/dev/null;
-docker build -f Dockerfile -t systemd;
+cd ./Docker-SystemD;
+docker image rm -f systemd:latest 2>/dev/null;
+docker build -f Dockerfile -t systemd .;
+```
