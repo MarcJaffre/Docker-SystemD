@@ -25,9 +25,10 @@ RUN apt install -y openssh-server
 ###############################################################################################################################################################################################################################
 # Copie de fichier #
 ####################
-COPY ./services/start.service  /etc/systemd/system/start_container.service
-COPY ./services/novnc.service  /etc/systemd/system/novnc.service
-COPY ./scripts/start.sh        /usr/local/bin/start.sh
+COPY ./services/start.service     /etc/systemd/system/start_container.service
+COPY ./services/novnc.service     /etc/systemd/system/novnc.service
+COPY ./services/tigervnc.service  /etc/systemd/system/tigervncserver.service
+COPY ./scripts/start.sh           /usr/local/bin/start.sh
 
 ###############################################################################################################################################################################################################################
 # Permission #
