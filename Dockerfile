@@ -34,9 +34,8 @@ echo "Public"; \
 echo "$(hotname)"; \
 echo ""\
 ) | \
-openssl req -x509 -nodes -newkey rsa:3072 -keyout /novnc.pem -out /usr/share/novnc/novnc.pem -days 3650 &&
+openssl req -x509 -nodes -newkey rsa:3072 -keyout /novnc.pem -out /usr/share/novnc/novnc.pem -days 3650 && \
 chown wwww-data:wwww-data /usr/share/novnc/novnc.pem
-
 
 ##############################################################################################################
 # Services #
