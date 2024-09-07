@@ -15,6 +15,8 @@ openssh-server \
 systemd \
 systemd-sysv
 
+RUN  apt -y install -y novnc python3-websockify
+
 
 # Create the directory for systemd configuration overrides
 RUN mkdir -p /etc/systemd/system.conf.d/
