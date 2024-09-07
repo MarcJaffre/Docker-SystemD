@@ -8,7 +8,7 @@ RUN apt install -y systemd systemd-sysv
 
 # Configurer systemd comme gestionnaire d'init
 RUN update-rc.d systemd defaults
-RUN update-rc.d systemd enable
+#RUN update-rc.d systemd enable
 
 # Activer le service systemd
 #RUN systemctl enable systemd
