@@ -12,4 +12,5 @@ git clone https://github.com/MarcJaffre/Docker-SystemD.git;
 cd ./Docker-SystemD;
 docker image rm -f systemd:latest 2>/dev/null;
 docker build -f Dockerfile -t systemd .;
+docker-compose up -d;
 ```
