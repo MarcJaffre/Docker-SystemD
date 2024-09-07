@@ -23,11 +23,12 @@ RUN echo "[Install] \n systemctl daemon-reexec"  > /etc/systemd/system.conf.d/ov
 ###############################################################################################################################################################################################################################
 # Copie de fichiers #
 #####################
-COPY ./services/start.service  /etc/systemd/system/start_container.service
-COPY ./services/novnc.service  /etc/systemd/system/novnc.service
-COPY ./services/ssh.service    /etc/systemd/system/ssh.service
-COPY ./start.sh                /usr/local/bin/start.sh
-COPY ./Paquet.sh               /usr/local/bin/paquet.sh
+COPY ./services/start.service     /etc/systemd/system/start_container.service
+COPY ./services/novnc.service     /etc/systemd/system/novnc.service
+COPY ./services/ssh.service       /etc/systemd/system/ssh.service
+COPY ./services/tigervnc.service  /etc/systemd/system/tigervncserver.service
+COPY ./start.sh                   /usr/local/bin/start.sh
+COPY ./Paquet.sh                  /usr/local/bin/paquet.sh
 
 ###############################################################################################################################################################################################################################
 # Permission #
