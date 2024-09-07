@@ -24,12 +24,12 @@ echo " systemctl daemon-reexec" >> /etc/systemd/system.conf.d/override.conf
 # Paquets #
 ###########
 RUN apt install -y bash bash-completion nano net-tools openssh-server
-
 ###############################################################################################################################################################################################################################
 # Script #
 ##########
 COPY ./script/start.sh        /usr/local/bin/start.sh
 RUN chmod +x                  /usr/local/bin/start.sh
+RUN /usr/bin/bash -c "/usr/local/bin/start.sh"
 
 ###############################################################################################################################################################################################################################
 # Service #
