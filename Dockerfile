@@ -26,7 +26,7 @@ RUN systemctl enable ssh
 #########
 RUN apt install -y novnc
 COPY ./services/novnc.service /etc/systemd/system/novnc.service
-RUN systemctl disable novnc
+RUN systemctl enable novnc
 
 ###############################################################################################################################################################################################################################
 # Tigervnc #
