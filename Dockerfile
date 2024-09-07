@@ -20,7 +20,7 @@ echo "[Install] \n systemctl daemon-reexec"  > /etc/systemd/system.conf.d/overri
 # Packages #
 ############
 RUN apt install -y openssh-server
-
+RUN apt install -y novnc
 
 ###############################################################################################################################################################################################################################
 # Services #
