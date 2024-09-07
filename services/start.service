@@ -6,6 +6,7 @@ After=network.target
 [Service]
 ExecStart=/usr/bin/bash -c '/usr/local/bin/start.sh'
 Restart=always
+TimeoutSec=30
 
 [Install]
 WantedBy=multi-user.target
