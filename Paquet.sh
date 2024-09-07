@@ -12,16 +12,16 @@ apt install -y openssh-server;
 ###############################################################################################################################################################################################################################
 # VNC #
 #######
-apt install -y novnc;
-apt install -y python3-websockify;
-apt install -y tigervnc-standalone-server;
+#apt install -y novnc;
+#apt install -y python3-websockify;
+#apt install -y tigervnc-standalone-server;
 
-(echo "admin123"; echo "admin123"; echo "n") | vncpasswd
+#(echo "admin123"; echo "admin123"; echo "n") | vncpasswd
 
 ###############################################################################################################################################################################################################################
 # Environnement User #
 ######################
-apt install --no-install-recommends -y mate;
+#apt install --no-install-recommends -y mate;
 
 ###############################################################################################################################################################################################################################
 # Configuration SSH #
@@ -31,7 +31,8 @@ sed -i -e "s/^#PermitRootLogin prohibit-password/PermitRootLogin yes/g" /etc/ssh
 ###############################################################################################################################################################################################################################
 # OpenSSL #
 ###########
-mdkir -p /usr/share/novnc/;
-(echo "FR"; echo "France"; echo "Paris"; echo "Personnel"; echo "Personnel"; echo "$(hostname)"; echo "mail@exemple.co"; ) | \
-openssl req -x509 -nodes -newkey rsa:3072 -keyout /usr/share/novnc/novnc.pem -out /usr/share/novnc/novnc.pem -days 3650
+#mdkir -p /usr/share/novnc/;
+#(echo "FR"; echo "France"; echo "Paris"; echo "Personnel"; echo "Personnel"; echo "$(hostname)"; echo "mail@exemple.co"; ) | \
+#openssl req -x509 -nodes -newkey rsa:3072 -keyout /usr/share/novnc/novnc.pem -out /usr/share/novnc/novnc.pem -days 3650
+
 ###############################################################################################################################################################################################################################
