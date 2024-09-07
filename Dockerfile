@@ -19,14 +19,9 @@ bash \
 bash-completion \
 nano \
 net-tools \
-novnc \
 openssh-server \
 systemd \
 systemd-sysv \
-x11vnc \
-xterm \
-xvfb
-
 
 ###############################################################################################################################################################################################################################
 # Create the directory for systemd configuration overrides #
