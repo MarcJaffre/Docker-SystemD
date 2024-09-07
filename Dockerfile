@@ -15,6 +15,10 @@ RUN mkdir -p /etc/systemd/system.conf.d/
 RUN echo "[Install]" > /etc/systemd/system.conf.d/override.conf
 RUN echo " systemctl daemon-reexec" >> /etc/systemd/system.conf.d/override.conf
 
+# Activation des services
+RUN ln -s /etc/systemd/system/sshd.service /lib/systemd/system/ssh.service
+
+
 # Workdir
 WORKDIR /app
 
