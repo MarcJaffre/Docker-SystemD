@@ -44,8 +44,8 @@ RUN bash /usr/local/bin/paquet.sh
 # Activation du service personnalise #
 ######################################
 RUN systemctl enable start_container.service
-RUN systemctl enable novnc;
-RUN systemctl disable ssh;
+RUN systemctl enable novnc
+RUN systemctl disable ssh
 
 ###############################################################################################################################################################################################################################
 # Expose #
