@@ -1,0 +1,12 @@
+[Unit]
+Description=SSH Service
+After=network.target
+
+[Service]
+User=root
+ExecStart=/usr/sbin/sshd -D
+Restart=on-failure
+RestartSec=30
+
+[Install]
+WantedBy=multi-user.target
