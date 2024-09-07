@@ -21,27 +21,22 @@ RUN apt install -y systemd systemd-sysv && mkdir -p /etc/systemd/system.conf.d
 RUN echo "[Install] \n systemctl daemon-reexec"                 > /etc/systemd/system.conf.d/override.conf 
 
 ###############################################################################################################################################################################################################################
-# Paquet de base #
-##################
-RUN apt install -y bash bash-completion nano net-tools openssh-server
+# Copie de fichiers #
+#####################
+COPY ./services/start.service /etc/systemd/system/start_container.service
+COPY ./start.sh               /usr/local/bin/start.sh
 
 ###############################################################################################################################################################################################################################
-# NOVNC #
-#########
-#RUN apt install -y novnc;
-#COPY ./services/novnc.service /etc/systemd/system/novnc.service
-
-###############################################################################################################################################################################################################################
-# Script #
-##########
-COPY ./start.sh  /usr/local/bin/start.sh
+# Permission #
+##############
 RUN chmod +x     /usr/local/bin/start.sh
 
 ###############################################################################################################################################################################################################################
-# Customisation #
-#################
-COPY ./services/start.service /etc/systemd/system/start_container.service
+# Activation du service personnalise #
+######################################
 RUN systemctl enable  start_container.service
+
+
 
 ###############################################################################################################################################################################################################################
 # WorkDir #
