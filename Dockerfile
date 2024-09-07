@@ -18,10 +18,10 @@ RUN echo "[Install] \n systemctl daemon-reexec"  > /etc/systemd/system.conf.d/ov
 ###############################################################################################################################################################################################################################
 # SSH #
 #######
-#RUN apt install -y openssh-server
-#RUN mkdir -p /run/sshd && chmod 0755 /run/sshd
-#COPY ./services/ssh.service  /etc/systemd/system/ssh.service
-#RUN systemctl enable ssh.service
+RUN apt install -y openssh-server
+RUN mkdir -p /run/sshd && chmod 0755 /run/sshd
+COPY ./services/ssh.service  /etc/systemd/system/ssh.service
+RUN systemctl enable ssh.service
 
 ###############################################################################################################################################################################################################################
 # NOVNC #
@@ -33,17 +33,15 @@ RUN systemctl enable novnc
 ###############################################################################################################################################################################################################################
 # Tigervnc #
 ############
-#RUN apt install -y python3-websockify tigervnc-standalone-server
-#RUN (echo "admin123"; echo "admin123"; echo "n") | vncpasswd
-#COPY ./services/tigervnc.service /etc/systemd/system/tigervnc.service
-#systemctl enable tigervnc;
+RUN apt install -y python3-websockify tigervnc-standalone-server
+RUN (echo "admin123"; echo "admin123"; echo "n") | vncpasswd
+COPY ./services/tigervnc.service /etc/systemd/system/tigervnc.service
+systemctl enable tigervnc;
 
 ###############################################################################################################################################################################################################################
 # Environment User #
 ####################
-#RUN apt install -y xfce4 xfce4-goodies
-
-
+RUN apt install -y xfce4 xfce4-goodies
 
 ###############################################################################################################################################################################################################################
 # Start-up #
