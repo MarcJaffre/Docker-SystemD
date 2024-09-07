@@ -1,10 +1,10 @@
 [Unit]
-Description=Websockify VNC Service
+Description=NOVNC Service
 After=network.target
 
 [Service]
-User=nobody
-ExecStart=/usr/bin/websockify -D --web=/usr/share/novnc/ --cert=/usr/share/novnc/novnc.pem 6080 localhost:5901
+User=root
+ExecStart=/usr/bin/websockify -v --web=/usr/share/novnc/ 6080 localhost:5901
 Restart=always
 
 [Install]
