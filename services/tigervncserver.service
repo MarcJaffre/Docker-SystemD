@@ -1,1 +1,12 @@
-/usr/bin/tigervncserver -xstartup /usr/bin/mate-session -autokill -localhost no :1
+[Unit]
+Description=Lancement du Bureau VNC
+After=novnc.service
+
+[Service]
+#Type=forking
+ExecStart=/usr/bin/tigervncserver -xstartup /usr/bin/mate-session -autokill -localhost no :1 &
+ExecStop=/usr/bin/tigervncserver -kill %i
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
