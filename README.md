@@ -35,10 +35,14 @@ docker-compose up -d;
 
 # Fonctionnement
 ```
-- Démarrage du conteneur
-- Installation des paquets
+- Démarrage de l'OS
+- Mot de passe root
+- Mise à jour des paquets
+- Installation de SystemD
 - Copie de fichier
-- Activation du service Start_container.sh au démarrage
-- SystemD se lance
-- Le service démarre le script
+- Permission
+- Installation des paquets
+- Activation du service custom
+- Exposition de port
+- Démarrage SystemD
 ```
