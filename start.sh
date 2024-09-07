@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Load systemd daemon
-systemd --system=/
+systemd
 
 # Disable and start the SSH service
 #sed -i -e "s/^#PermitRootLogin prohibit-password/PermitRootLogin yes/g" /etc/ssh/sshd_config;
