@@ -32,3 +32,13 @@ docker build -f Dockerfile -t systemd .;
 #############
 docker-compose up -d;
 ```
+
+# Fonctionnement
+```
+- Démarrage du conteneur
+- Installation des paquets
+- Copie de fichier
+- Activation du service Start_container.sh au démarrage
+- SystemD se lance
+- Le service démarre le script
+```
