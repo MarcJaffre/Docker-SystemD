@@ -40,14 +40,6 @@ chown wwww-data:wwww-data /usr/share/novnc/novnc.pem
 ##############################################################################################################
 # Services #
 ############
-RUN cat > /etc/systemd/system/novnc.service << EOF
-[Service] \n
-User=www-data \n
-ExecStart= \n
-ExecStart=websockify -D --web=/usr/share/novnc/ --cert=/usr/share/novnc/novnc.pem 6080 localhost:5901 \n
-[Install] \n
-WantedBy=graphical.target
-EOF
 
 ##############################################################################################################
 # Create the directory for systemd configuration overrides
