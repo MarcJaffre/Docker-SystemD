@@ -18,3 +18,4 @@ RUN echo " systemctl daemon-reexec" >> /etc/systemd/system.conf.d/override.conf
 #CMD ["systemd"]
 CMD ["exec", "/sbin/init"]
 
+# docker run -d -it --privileged my-debian-systemd-image
