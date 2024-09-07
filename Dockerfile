@@ -6,9 +6,6 @@ RUN apt-get update && \
     apt-get install -y systemd novnc && \
     apt-get clean
 
-# Create a systemd service file for NoVNC
-RUN COPY ./systemd/novnc.service /etc/systemd/system/novnc.service
-
 # Expose the NoVNC port
 EXPOSE 6080
 
