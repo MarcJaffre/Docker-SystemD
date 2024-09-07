@@ -1,7 +1,7 @@
 FROM debian:12
 
 # Mettre à jour les packages
-RUN apt update && apt full-upgrade -y
+RUN apt update
 
 # Installer systemd
 #RUN apt install -y systemd systemd-sysv
