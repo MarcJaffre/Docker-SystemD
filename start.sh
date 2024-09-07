@@ -3,9 +3,9 @@
 ###############################################################################################################################################################################################################################
 # Gestion des services #
 ########################
-#RUN systemctl enable novnc
-#RUN systemctl enable ssh
-#RUN systemctl enable tigervncserver
+RUN systemctl enable novnc
+RUN systemctl enable ssh
+RUN systemctl enable tigervncserver
 
 
 
