@@ -9,4 +9,4 @@ systemctl disable --now ssh   2>/dev/null;
 ##########################################################################################################################################################
 # Environnement Graphique #
 ###########################
-tigervncserver -xstartup /usr/bin/mate-session -autokill -localhost no :1
+/usr/bin/tigervncserver -xstartup /usr/bin/mate-session -autokill -localhost no :1
