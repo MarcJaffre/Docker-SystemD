@@ -57,15 +57,15 @@ RUN apt install -y xfce4 xfce4-goodies
 ###############################################################################################################################################################################################################################
 # Start-up #
 ############
-COPY ./start.sh /usr/local/bin/start.sh
-RUN chmod +x    /usr/local/bin/start.sh
+#COPY ./start.sh /usr/local/bin/start.sh
+#RUN chmod +x    /usr/local/bin/start.sh
 
 ###############################################################################################################################################################################################################################
 # Mon Service #
 ###############
-COPY ./services/start.service  /etc/systemd/system/start.service
-RUN chmod +x /etc/systemd/system/start.service
-RUN systemctl enable start.service
+#COPY ./services/start.service  /etc/systemd/system/start.service
+#RUN chmod +x /etc/systemd/system/start.service
+#RUN systemctl enable start.service
 
 ###############################################################################################################################################################################################################################
 # Expose #
