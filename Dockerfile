@@ -1,23 +1,10 @@
 FROM debian:12
 
-# Mettre à jour les packages
-RUN apt update
+# Install systemd
+RUN apt update && apt install -y systemd
 
-# Installer systemd
-RUN apt install -y systemd systemd-sysv
+# Enable systemd
+RUN systemctl enable systemd
 
-# Configurer systemd comme gestionnaire d'init
-RUN update-rc.d systemd enable
-#RUN update-rc.d systemd defaults
-
-# Activer le service systemd
-#RUN systemctl enable systemd
-
-# Définir le répertoire de travail par défaut
-#WORKDIR /root
-
-# Exposer le port 22 pour SSH
-#EXPOSE 22
-
-# Définir la commande par défaut à exécuter lors du démarrage du conteneur
-#CMD ["systemd"]
+# Set the default command to run systemd
+CMD ["systemd"]
