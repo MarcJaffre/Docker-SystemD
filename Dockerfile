@@ -4,7 +4,7 @@ FROM debian:12
 RUN apt update && apt full-upgrade -y
 
 # Installer systemd
-RUN apt install -y systemd systemd-sysv
+#RUN apt install -y systemd systemd-sysv
 
 # Configurer systemd comme gestionnaire d'init
 #RUN update-rc.d systemd defaults
