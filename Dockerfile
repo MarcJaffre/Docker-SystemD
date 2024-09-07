@@ -23,18 +23,19 @@ RUN echo "[Install] \n systemctl daemon-reexec"  > /etc/systemd/system.conf.d/ov
 ###############################################################################################################################################################################################################################
 # Copie de fichiers #
 #####################
-#COPY ./services/start.service     /etc/systemd/system/start_container.service
-COPY ./services/novnc.service     /etc/systemd/system/novnc.service
-COPY ./services/ssh.service       /etc/systemd/system/ssh.service
-COPY ./services/tigervnc.service  /etc/systemd/system/tigervncserver.service
+#COPY ./Paquet.sh                  /usr/local/bin/paquet.sh
 #COPY ./start.sh                   /usr/local/bin/start.sh
-COPY ./Paquet.sh                  /usr/local/bin/paquet.sh
+
+#COPY ./services/start.service     /etc/systemd/system/start_container.service
+#COPY ./services/novnc.service     /etc/systemd/system/novnc.service
+#COPY ./services/ssh.service       /etc/systemd/system/ssh.service
+#COPY ./services/tigervnc.service  /etc/systemd/system/tigervncserver.service
 
 ###############################################################################################################################################################################################################################
 # Permission #
 ##############
 #RUN chmod +x /usr/local/bin/start.sh
-RUN chmod +x /usr/local/bin/paquet.sh
+#RUN chmod +x /usr/local/bin/paquet.sh
 
 ###############################################################################################################################################################################################################################
 # Paquets #
@@ -45,9 +46,9 @@ RUN bash /usr/local/bin/paquet.sh
 # Activation du service personnalise #
 ######################################
 #RUN systemctl enable start_container
-RUN systemctl enable novnc
-RUN systemctl enable ssh
-RUN systemctl enable tigervncserver
+#RUN systemctl enable novnc
+#RUN systemctl enable ssh
+#RUN systemctl enable tigervncserver
 
 ###############################################################################################################################################################################################################################
 # Expose #
