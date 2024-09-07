@@ -27,7 +27,7 @@ RUN apt install -y openssh-server
 ####################
 COPY ./services/start.service  /etc/systemd/system/start_container.service
 COPY ./services/novnc.service  /etc/systemd/system/novnc.service
-COPY ./scripts/start.sh /usr/local/bin/start.sh
+COPY ./scripts/start.sh        /usr/local/bin/start.sh
 
 ###############################################################################################################################################################################################################################
 # Services #
