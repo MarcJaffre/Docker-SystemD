@@ -16,6 +16,11 @@ RUN mkdir -p /etc/systemd/system.conf.d
 RUN echo "[Install] \n systemctl daemon-reexec"  > /etc/systemd/system.conf.d/override.conf
 
 ###############################################################################################################################################################################################################################
+# Environment User #
+####################
+#RUN apt install -y xfce4 xfce4-goodies
+
+###############################################################################################################################################################################################################################
 # SSH #
 #######
 RUN apt install -y openssh-server
@@ -37,13 +42,6 @@ RUN systemctl enable novnc
 #RUN (echo "admin123"; echo "admin123"; echo "n") | vncpasswd
 #COPY ./services/tigervnc.service /etc/systemd/system/tigervnc.service
 #systemctl enable tigervnc;
-
-###############################################################################################################################################################################################################################
-# Environment User #
-####################
-RUN apt install -y xfce4 xfce4-goodies
-
-
 
 
 
