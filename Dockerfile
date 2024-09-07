@@ -6,45 +6,35 @@ FROM debian:12
 RUN echo root:admin | chpasswd
 
 ###############################################################################################################################################################################################################################
-# Install systemd #
-###################
+# Mise a jour du conteneur #
+############################
 RUN apt update
 RUN apt upgrade -y
 
 ###############################################################################################################################################################################################################################
-# Install Package #
-###################
-RUN apt install -y \
-bash \
-bash-completion \
-nano \
-net-tools \
-openssh-server \
-systemd \
-systemd-sysv
+# SystemD #
+###########
+RUN \
+apt install -y systemd systemd-sysv && \
+mkdir -p /etc/systemd/system.conf.d && \
+echo "[Install]" > /etc/systemd/system.conf.d/override.conf && \
+echo " systemctl daemon-reexec" >> /etc/systemd/system.conf.d/override.conf
 
 ###############################################################################################################################################################################################################################
-# Create the directory for systemd configuration overrides #
-############################################################
-RUN mkdir -p /etc/systemd/system.conf.d/
+# Paquets #
+###########
+RUN apt install -y bash bash-completion nano net-tools openssh-server
 
 ###############################################################################################################################################################################################################################
-# Configure systemd to start automatically #
-############################################
-RUN echo "[Install]" > /etc/systemd/system.conf.d/override.conf
-RUN echo " systemctl daemon-reexec" >> /etc/systemd/system.conf.d/override.conf
+# Service #
+###########
+COPY ./services/start.service /etc/systemd/system/start_container.service
 
 ###############################################################################################################################################################################################################################
-# Copy #
-########
-COPY ./services/start.service /etc/systemd/system/start.service
-COPY ./script/start.sh        /usr/local/bin/start_services.sh
-
-###############################################################################################################################################################################################################################
-# Permission #
-##############
-RUN chmod +x /usr/local/bin/start_services.sh
-
+# Script #
+##########
+COPY ./script/start.sh        /usr/local/bin/start.sh
+RUN chmod +x                  /usr/local/bin/start.sh
 
 ###############################################################################################################################################################################################################################
 # Demarrage du service #
@@ -59,5 +49,3 @@ EXPOSE 22
 ###############################################################################################################################################################################################################################
 # Set the default command to run systemd
 CMD ["systemd"]
-
-
