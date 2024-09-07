@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 User=root
-ExecStart=/usr/bin/websockify -v --web=/usr/share/novnc/ 6080 localhost:5901
+ExecStart=/usr/bin/websockify -D --web /usr/share/novnc/ 6080 localhost:5900
 Restart=always
 
 [Install]
