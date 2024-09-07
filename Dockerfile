@@ -18,7 +18,7 @@ RUN echo "[Install] \n systemctl daemon-reexec"  > /etc/systemd/system.conf.d/ov
 ###############################################################################################################################################################################################################################
 # Environment User #
 ####################
-#RUN apt install -y xfce4
+RUN apt install -y xfce4
 #RUN apt install -y xfce4-goodies
 
 ###############################################################################################################################################################################################################################
@@ -39,38 +39,38 @@ RUN systemctl enable novnc
 ###############################################################################################################################################################################################################################
 # Tigervnc #
 ############
-#RUN apt install -y python3-websockify tigervnc-standalone-server
-#RUN (echo "admin123"; echo "admin123"; echo "n") | vncpasswd
-#COPY ./services/tigervnc.service /etc/systemd/system/tigervnc.service
-#systemctl enable tigervnc;
+RUN apt install -y python3-websockify tigervnc-standalone-server
+RUN (echo "admin123"; echo "admin123"; echo "n") | vncpasswd
+COPY ./services/tigervnc.service /etc/systemd/system/tigervnc.service
+systemctl enable tigervnc;
 
 
 ###############################################################################################################################################################################################################################
 # Start-up #
 ############
-#COPY ./start.sh /usr/local/bin/start.sh
-#RUN chmod +x    /usr/local/bin/start.sh
+COPY ./start.sh /usr/local/bin/start.sh
+RUN chmod +x    /usr/local/bin/start.sh
 
 ###############################################################################################################################################################################################################################
 # Mon Service #
 ###############
-#COPY ./services/start.service  /etc/systemd/system/start.service
-#RUN chmod +x /etc/systemd/system/start.service
-#RUN systemctl enable start.service
+COPY ./services/start.service  /etc/systemd/system/start.service
+RUN chmod +x /etc/systemd/system/start.service
+RUN systemctl enable start.service
 
 ###############################################################################################################################################################################################################################
 # Expose #
 ##########
 # Expose the VNC port
-#EXPOSE 5901
+EXPOSE 5901
 
 # Expose the NOVNC port
-#EXPOSE 6080
+EXPOSE 6080
 
 ###############################################################################################################################################################################################################################
 # WorkDir #
 ###########
-#WORKDIR /root
+WORKDIR /root
 
 ###############################################################################################################################################################################################################################
 # Set the default command to run systemd #
