@@ -26,6 +26,11 @@ RUN echo "[Install] \n systemctl daemon-reexec"  > /etc/systemd/system.conf.d/ov
 COPY ./Paquet.sh                  /usr/local/bin/paquet.sh  
 COPY ./start.sh                   /usr/local/bin/start.sh
 
+###############################################################################################################################################################################################################################
+# Permissions #
+###############
+RUN chmod +x /usr/local/bin/paquet.sh
+RUN chmod +x /usr/local/bin/start.sh
 
 
 
