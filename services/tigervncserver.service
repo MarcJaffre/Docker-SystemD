@@ -1,0 +1,1 @@
+/usr/bin/tigervncserver -xstartup /usr/bin/mate-session -autokill -localhost no :1
