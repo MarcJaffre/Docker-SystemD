@@ -6,12 +6,13 @@ services:    #
 ###############################
   Debian-SystemD:             #
    # ------------------------ #
+   privileged: true           #
+   # ------------------------ #
    image: 'systemd'           #
    container_name: 'SystemD'  #
    network_mode: 'bridge'     #
-   restart: 'unless-stopped'  #
    # ------------------------ #
-   privileged: true           #
+   restart: 'unless-stopped'  #
    # ------------------------ #
    hostname: 'SystemD'        #
    # ------------------------ #
