@@ -24,9 +24,9 @@ RUN echo "[Install] \n systemctl daemon-reexec"  > /etc/systemd/system.conf.d/ov
 ###############################################################################################################################################################################################################################
 # Mon Service #
 ###############
-#COPY ./services/start.service  /etc/systemd/system/start.service
-#RUN chmod +x                   /etc/systemd/system/start.service
-#RUN systemctl enable start.service
+COPY ./services/start.service  /etc/systemd/system/start.service
+RUN chmod +x                   /etc/systemd/system/start.service
+RUN systemctl enable start.service
 
 ###############################################################################################################################################################################################################################
 # SSH #
