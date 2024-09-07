@@ -1,3 +1,8 @@
+# cat requierement.txt | xargs 
 bash-completion
+nano
+openssh-server
 systemd
 systemd-sysv
+
+
