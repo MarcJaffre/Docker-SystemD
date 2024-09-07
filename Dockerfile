@@ -14,5 +14,11 @@ RUN mkdir -p /etc/systemd/system.conf.d/
 RUN echo "[Install]" > /etc/systemd/system.conf.d/override.conf
 RUN echo " systemctl daemon-reexec" >> /etc/systemd/system.conf.d/override.conf
 
+# Workdir
+/app
+
+# Expose
+EXPOSE 22 80 443
+
 # Set the default command to run systemd
 CMD ["/sbin/init"]
