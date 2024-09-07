@@ -9,6 +9,7 @@ clear;
 ####################################################################
 # Conteneur #
 #############
+docker image prune -a -f 1>/dev/null;
 cd /tmp/Docker-SystemD 2>/dev/null;
 docker-compose down 2>/dev/null;
 
