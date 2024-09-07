@@ -31,9 +31,13 @@ COPY ./services/novnc.service /etc/systemd/system/novnc.service
 # Tigervnc #
 ############
 RUN apt install -y python3-websockify tigervnc-standalone-server
-COPY ./services/tigervnc.service /etc/systemd/system/tigervnc.service
 RUN (echo "admin123"; echo "admin123"; echo "n") | vncpasswd
+COPY ./services/tigervnc.service /etc/systemd/system/tigervnc.service
 
+###############################################################################################################################################################################################################################
+# Start-up #
+############
+COPY ./start.sh /usr/bin/start.sh
 
 
 #RUN systemctl enable novnc
