@@ -33,7 +33,7 @@ RUN systemctl enable           /etc/systemd/system/start.service
 #######
 RUN apt install -y openssh-server
 COPY ./services/ssh.service  /etc/systemd/system/ssh.service
-
+RUN mkdir -p /run/sshd && chmod 0755 /run/sshd
 
 ###############################################################################################################################################################################################################################
 # NOVNC #
