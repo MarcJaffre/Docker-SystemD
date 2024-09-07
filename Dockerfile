@@ -33,7 +33,7 @@ RUN apt install -y bash bash-completion nano net-tools openssh-server
 # NOVNC #
 #########
 RUN apt install -y novnc;
-COPY  /etc/systemd/system/novnc.service
+COPY ./services/novnc.service /etc/systemd/system/novnc.service
 RUN systemctl enable novnc.service
 
 ###############################################################################################################################################################################################################################
