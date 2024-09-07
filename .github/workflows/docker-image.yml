@@ -33,5 +33,5 @@ jobs:
    -
     name: Build and push Docker image
     run: |
-     docker build -f ${{ inputs.dockerfile }} -t my-image:${{ inputs.image-tag }} .
+     docker build -f ./${{ inputs.dockerfile }} -t my-image:${{ inputs.image-tag }} .
      docker push my-image:${{ inputs.image-tag }}
