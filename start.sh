@@ -1,5 +1,7 @@
 #!/bin/bash
 
+/usr/sbin/init
+
 # Load systemd daemon
 systemd --system=/sysroot
 
