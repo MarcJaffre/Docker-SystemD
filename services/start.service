@@ -3,7 +3,7 @@ Description=Start services
 After=systemd-networkd.service
 
 [Service]
-ExecStart=/usr/local/bin/start.sh
+ExecStart=/usr/bin/bash -c '/usr/local/bin/start.sh'
 Restart=always
 
 [Install]
