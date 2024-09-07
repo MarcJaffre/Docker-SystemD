@@ -49,12 +49,10 @@ RUN mkdir -p "/usr/share/novnc/";
 #########
 COPY ./services/novnc.service     /etc/systemd/system/novnc.service
 
-
-
 ###############################################################################################################################################################################################################################
 # Activation des services #
 ###########################
-#systemctl enable --now novnc;
+RUN systemctl enable --now novnc;
 #systemctl enable --now tigervncserver;
 
 
