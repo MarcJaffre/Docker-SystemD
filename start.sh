@@ -3,7 +3,7 @@
 /usr/sbin/init
 
 # Load systemd daemon
-systemd --system=/sysroot
+systemd
 
 # Enable and start the SSH service
 systemctl enable ssh.service
