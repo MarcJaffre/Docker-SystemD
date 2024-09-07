@@ -31,7 +31,6 @@ RUN apt install -y bash bash-completion nano net-tools openssh-server
 COPY ./script/start.sh        /usr/local/bin/start.sh
 RUN chmod +x                  /usr/local/bin/start.sh
 
-
 ###############################################################################################################################################################################################################################
 # Service #
 ###########
