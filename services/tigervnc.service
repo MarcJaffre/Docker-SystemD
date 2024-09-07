@@ -1,8 +1,7 @@
-# Create a new file called tigervncserver.service
+# Serveur Video Local vers VNC
 [Unit]
 Description=TigerVNC Server
 After=network.target
-
 
 [Service]
 User=root
