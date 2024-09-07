@@ -8,9 +8,8 @@ apt install -y bash-completion;
 apt install -y nano;
 apt install -y net-tools;
 apt install -y openssh-server;
-
 ###############################################################################################################################################################################################################################
 # NO VNC #
 ##########
 apt install -y novnc;
-systemctl enable --now novnc;
+
