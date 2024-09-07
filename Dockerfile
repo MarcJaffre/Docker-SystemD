@@ -4,11 +4,6 @@
 FROM debian:12
 
 ###############################################################################################################################################################################################################################
-# Root #
-########
-RUN echo root:admin | chpasswd
-
-###############################################################################################################################################################################################################################
 # Mise a jour du conteneur #
 ############################
 RUN apt update && apt upgrade -y
@@ -34,10 +29,11 @@ openssh-server \
 python3-websockify \
 tigervnc-standalone-server
 
-
+###############################################################################################################################################################################################################################
+# SSH #
+#######
 RUN sed -i -e "s/^#PermitRootLogin prohibit-password/PermitRootLogin yes/g" /etc/ssh/sshd_config 2>/dev/null;
-RUN (echo "admin123"; echo "admin123"; echo "n") | vncpasswd
-
+RUN echo root:admin | chpasswd
 
 ###############################################################################################################################################################################################################################
 # OpenSSL #
@@ -45,6 +41,7 @@ RUN (echo "admin123"; echo "admin123"; echo "n") | vncpasswd
 RUN mkdir -p "/usr/share/novnc/";
 RUN (echo "FR"; echo "France"; echo "Paris"; echo "Personnel"; echo "Personnel"; echo "$(hostname)"; echo "mail@exemple.co"; ) | openssl req -x509 -nodes -newkey rsa:3072 -keyout /usr/share/novnc/novnc.pem -out /usr/share/novnc/novnc.pem -days 3650
 
+RUN (echo "admin123"; echo "admin123"; echo "n") | vncpasswd
 
 
 
