@@ -40,10 +40,11 @@ RUN bash /usr/local/bin/paquet.sh
 ###############################################################################################################################################################################################################################
 # Activation du service personnalise #
 ######################################
-#RUN systemctl enable novnc
+RUN systemctl enable novnc
 RUN systemctl enable ssh
+RUN systemctl enable tigervncserver
+
 #RUN systemctl enable start_container
-#RUN systemctl enable tigervncserver
 
 ###############################################################################################################################################################################################################################
 # Expose #
