@@ -42,8 +42,7 @@ RUN bash /usr/local/bin/paquet.sh
 ######################################
 RUN systemctl enable novnc
 RUN systemctl enable ssh
-RUN systemctl enable tigervncserver
-
+#RUN systemctl enable tigervncserver
 #RUN systemctl enable start_container
 
 ###############################################################################################################################################################################################################################
