@@ -1,5 +1,5 @@
 [Unit]
-Description=NOVNC Service
+Description=Websockify Service
 After=network.target
 
 [Service]
