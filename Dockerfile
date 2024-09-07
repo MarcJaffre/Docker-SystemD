@@ -31,7 +31,6 @@ COPY ./services/novnc.service     /etc/systemd/system/novnc.service
 #COPY ./services/start.service     /etc/systemd/system/start_container.service
 #COPY ./services/tigervnc.service  /etc/systemd/system/tigervncserver.service
 
-
 ###############################################################################################################################################################################################################################
 # Permissions #
 ###############
@@ -50,6 +49,23 @@ RUN systemctl enable novnc
 RUN systemctl enable ssh
 #RUN systemctl enable start_container
 #RUN systemctl enable tigervncserver
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ###############################################################################################################################################################################################################################
 # Expose #
